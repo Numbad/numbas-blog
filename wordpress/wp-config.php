@@ -1,16 +1,23 @@
 <?php
+
+$tmptab = explode(";", $_SERVER['MYSQLCONNSTR_localdb']);
+$list = array();
+for($i = 0; $i < sizeof($tmptab); $i++) {
+        array_push($list, explode("=",$tmptab[$i])[1]);
+}
+
 /**
  * La configuration de base de votre installation WordPress.
  *
  * Ce fichier contient les réglages de configuration suivants : réglages MySQL,
  * préfixe de table, clés secrètes, langue utilisée, et ABSPATH.
- * Vous pouvez en savoir plus à leur sujet en allant sur
+ * Vous pouvez en savoir plus ▒|  leur sujet en allant sur
  * {@link http://codex.wordpress.org/fr:Modifier_wp-config.php Modifier
- * wp-config.php}. C’est votre hébergeur qui doit vous donner vos
+ * wp-config.php}. C▒~@~Yest votre hébergeur qui doit vous donner vos
  * codes MySQL.
  *
  * Ce fichier est utilisé par le script de création de wp-config.php pendant
- * le processus d’installation. Vous n’avez pas à utiliser le site web, vous
+ * le processus d▒~@~Yinstallation. Vous n▒~@~Yavez pas ▒|  utiliser le site web, vous
  * pouvez simplement renommer ce fichier en "wp-config.php" et remplir les
  * valeurs.
  *
@@ -19,24 +26,25 @@
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
-define('DB_NAME', 'votre_nom_de_bdd');
+define('DB_NAME', $list[0]);
 
 /** Utilisateur de la base de données MySQL. */
-define('DB_USER', 'votre_utilisateur_de_bdd');
+define('DB_USER', $list[2]);
 
 /** Mot de passe de la base de données MySQL. */
-define('DB_PASSWORD', 'votre_mdp_de_bdd');
+define('DB_PASSWORD', $list[3]);
 
-/** Adresse de l’hébergement MySQL. */
-define('DB_HOST', 'localhost');
+/** Adresse de l▒~@~Yhébergement MySQL. */
+define('DB_HOST', $list[1]);
 
-/** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
+/** Jeu de caractères ▒|  utiliser par la base de données lors de la création des tables. */
 define('DB_CHARSET', 'utf8');
 
 /** Type de collation de la base de données.
-  * N’y touchez que si vous savez ce que vous faites.
+  * N▒~@~Yy touchez que si vous savez ce que vous faites.
   */
 define('DB_COLLATE', '');
+
 
 /**#@+
  * Clés uniques d’authentification et salage.
@@ -49,14 +57,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'K);LGsuLV+JQRcsb)c$L>dY%n!3;|srFqfM=n^S]_f)Aq1@T9WaKn>4-[qdYc>5z');
+define('SECURE_AUTH_KEY',  '*dgH~(yMtYSRZ5o y(UZx <|26G@%p5SX>5=.s#2^7~cj]!-Q3CUzv8;&noTqcIo');
+define('LOGGED_IN_KEY',    'Be#-hmFg3!ExJ+T4;8+WNa3+#~<]i2x9x[;+5p.X3<12[ED.R4_+$g{FR1^+-6IZ');
+define('NONCE_KEY',        '|$7qDM9g$NlZo++z6NGgTE^BG/|1n-HbD,SFZ}xajhRj!4@/DXL7i.Nt0`>^y|Wp');
+define('AUTH_SALT',        ' N-<O0~|$Y7gfo<B{0nu;+Ykdbx~YgC}6j%!YM/8+H@2!mv6@nC0_ J`2a%QLZQj');
+define('SECURE_AUTH_SALT', '2>+FlhtmV0C>T<}>E_9W5Lk *,1=a`/fRJnX)n+e<@kK=p6<I)kT/{g>cZ@m;!>s');
+define('LOGGED_IN_SALT',   '<CjVsk4:[qTZ$7+<X=!Oyh-RPiW2K |T9Jt>[W}*X%!ZXe(2=*P(rpyc?7yFt/V5');
+define('NONCE_SALT',       'to7kuq-Y;+|i7~GDCG}kPJ[0++P8j.1`I8+g b Nw{Ad`>KgcQzp%*,1|VEWz+4Y');
 /**#@-*/
 
 /**
