@@ -1,1 +1,3 @@
-<?php echo $MYSQLCONNSTR_localdb?>
+<?php 
+    echo $_SERVER[MYSQLCONNSTR_localdb] 
+    ?>
