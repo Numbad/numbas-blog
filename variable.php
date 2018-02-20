@@ -1,3 +1,3 @@
 <?php 
-    echo $_SERVER[MYSQLCONNSTR_localdb] 
+    echo $_SERVER[MYSQLCONNSTR_wordpress] 
     ?>
